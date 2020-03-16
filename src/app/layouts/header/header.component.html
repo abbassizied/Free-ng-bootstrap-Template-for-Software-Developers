@@ -1,0 +1,77 @@
+	<header class="header text-center">	    
+		<div class="force-overflow">
+			<h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Simon Doe</a></h1>
+			
+			<nav class="navbar navbar-expand-lg navbar-dark" >
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				
+				<div id="navigation" class="collapse navbar-collapse flex-column" >
+					<div class="profile-section pt-3 pt-lg-0">
+						<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image" >			
+						
+						<div class="bio mb-3">Hi, my name is Simon Doe and I'm a senior software engineer. Welcome to my personal website!</div><!--//bio-->
+						<ul class="social-list list-inline py-2 mx-auto">
+							<li class="list-inline-item"><a href="#"><fa-icon [icon]="faTwitter"></fa-icon></a></li>
+							<li class="list-inline-item"><a href="#"><fa-icon [icon]="faLinkedin" ></fa-icon></a></li>
+							<li class="list-inline-item"><a href="#"><fa-icon [icon]="faGitAlt" ></fa-icon></a></li>
+							<li class="list-inline-item"><a href="#"><fa-icon [icon]="faStackOverflow" ></fa-icon></a></li>
+							<li class="list-inline-item"><a href="#"><fa-icon [icon]="faCodepen" ></fa-icon></a></li>
+						</ul><!--//social-list-->
+						<hr> 
+					</div><!--//profile-section-->
+					
+					<ul ngbNav  #nav="ngbNav"  [(activeId)]="activeId" class="navbar-nav flex-column text-left">
+						<li [ngbNavItem]="1">
+							<a  ngbNavLink routerLink="/home"><fa-icon [icon]="faUser" ></fa-icon> About Me</a>
+						</li>
+						<li [ngbNavItem]="2">
+							<a  ngbNavLink routerLink="/portfolio"><fa-icon [icon]="faLaptopCode" ></fa-icon> Portfolio</a>
+						</li>
+						<li [ngbNavItem]="3">
+							<a  ngbNavLink routerLink="/services"><fa-icon [icon]="faBriefcase" ></fa-icon> Services &amp; Pricing</a>
+						</li>
+						<li [ngbNavItem]="4">
+							<a  ngbNavLink routerLink="/resume"><fa-icon [icon]="faFileAlt" ></fa-icon> Resume</a>
+						</li>
+						<li [ngbNavItem]="5">
+							<a  ngbNavLink routerLink="/blog-home"><fa-icon [icon]="faBlog" ></fa-icon> Blog</a>
+						</li>
+						<li [ngbNavItem]="6">
+							<a  ngbNavLink routerLink="/contact"><fa-icon [icon]="faEnvelopeOpenText" ></fa-icon> Contact</a>
+						</li>
+						<li class="nav-item dropdown" ngbDropdown>
+							<a class="nav-link dropdown-toggle"  ngbDropdownToggle id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+								<fa-icon [icon]="faCogs" ></fa-icon> More Pages
+							</a>
+							<ul ngbDropdownMenu aria-labelledby="navbarDropdown">
+							 <li><a ngbDropdownItem routerLink="/project">Project Page</a></li>
+							 <li><a ngbDropdownItem routerLink="/home">Blog Home 1</a></li>
+							 <li><a ngbDropdownItem routerLink="/blog-home-alt">Blog Home 2</a></li>
+							 <li><a ngbDropdownItem routerLink="/blog-post">Blog Post</a></li>
+							</ul>
+						</li>
+						 
+					</ul>
+					<div [ngbNavOutlet]="nav"></div>
+					
+					<div class="my-2">
+						<a class="btn btn-primary" routerLink="/contact" target="_blank"><fa-icon [icon]="faPaperPlane" ></fa-icon> Hire Me</a>
+					</div>
+					
+	
+					<div class="dark-mode-toggle text-center w-100">
+						<hr class="mb-4">
+					    <h4 class="toggle-name mb-3 "><i class="fas fa-adjust mr-1"></i>Dark Mode</h4>
+					    
+		 <input class="toggle" id="darkmode" type="checkbox" [checked]="mode" (click)="toggleTheme()">
+					    <label class="toggle-btn mx-auto mb-0" for="darkmode"></label>
+					    
+					</div><!--//dark-mode-toggle-->
+					
+				</div>
+			</nav>
+		</div><!--//force-overflow-->
+	</header>
